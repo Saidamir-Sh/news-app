@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -49,6 +50,45 @@
               ],
               "outputHashing": "all"
             },
+            "develop": {
+              "optimization": {
+                "scripts": false,
+                "styles": {
+                  "minify": false,
+                  "inlineCritical": false
+                },
+                "fonts": false
+              },
+              "sourceMap": {
+                "scripts": true,
+                "styles": true,
+                "hidden": false,
+                "vendor": true
+              },
+              "namedChunks": false,
+              "extractLicenses": false,
+              "vendorChunk": false,
+              "buildOptimizer": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.develop.ts"
+                }
+              ],
+              "assets": [
+                "src/assets",
+                {
+                  "glob": "favicon.ico",
+                  "input": "src/assets/favicons/step",
+                  "output": "/"
+                }
+              ],
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/styles"
+                ]
+              }
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -68,6 +108,9 @@
             },
             "development": {
               "browserTarget": "news-app:build:development"
+            },
+            "develop": {
+              "browserTarget": "news-app:build:develop"
             }
           },
           "defaultConfiguration": "development"
@@ -90,12 +133,17 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.css"
             ],
             "scripts": []
           }
         }
+
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
