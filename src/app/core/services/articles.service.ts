@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
-import { HttpClient  } from '@angular/common/http';
+import { RequestService } from './request.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticlesService {
 
-  constructor(private http: HttpClient) { }
+  private categoryURL = 'category=entertainment' 
+
+  constructor(private request: RequestService) { }
+
+  public getArticlesByCategory(): Observable<any> {
+   return this.request.get(this.categoryURL) 
+  }
 }
