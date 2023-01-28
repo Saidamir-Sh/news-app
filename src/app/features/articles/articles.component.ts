@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { ArticlesService } from 'src/app/core/services/articles.service';
 
 @Component({
@@ -9,26 +8,34 @@ import { ArticlesService } from 'src/app/core/services/articles.service';
 })
 export class ArticlesComponent implements OnInit {
 
-  articles: any[] = [];
+  public articles: any[] = [];
 
   constructor(
     private articleService: ArticlesService
   ) { }
 
   ngOnInit(): void {
-    this.getArticlesByCategory()
-  }
-
-  public getArticlesByCategory(): void {
     this.articleService.getArticlesByCategory().subscribe({
       next: (data) => {
-        this.articles = data; 
-        console.log(data);
+        this.articles = data.articles; 
+        console.log(this.articles)
       },
       error: (error) => {
         console.log(error);
       }
     })
   }
+
+  // public getArticlesByCategory(): void {
+  //   this.articleService.getArticlesByCategory().subscribe({
+  //     next: (data) => {
+  //       this.articles = data.articles; 
+  //       console.log(this.articles)
+  //     },
+  //     error: (error) => {
+  //       console.log(error);
+  //     }
+  //   })
+  // }
 
 }

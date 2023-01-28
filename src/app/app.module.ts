@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
  
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
+import { ArticlesService } from './core/services/articles.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ArticlesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
