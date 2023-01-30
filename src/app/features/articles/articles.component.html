@@ -2,9 +2,7 @@
   <div class="cards">
     <div *ngFor="let article of articles">
       <div class="card">
-        <div>
-          <img class="card-image" [src]="article.urlToImage">
-        </div>
+        <img class="card-image" [src]="article.urlToImage">
         <div class="card-title">{{article.title}} - {{article.author}}</div>
         <div class="card-description">{{article.description}}</div>
       </div>
