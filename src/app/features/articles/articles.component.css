@@ -3,3 +3,14 @@
     padding-left: 3rem;
     padding-right: 3rem;
 }
+.cards {
+    /* display: flex; */
+}
+.card {
+    width: 30%;
+    padding: 1rem 1.5rem;
+    box-shadow: 0px 2px 5px grey;
+}
+.card-image {
+    max-width: 100%;
+}

@@ -1,5 +1,13 @@
 <div class="articles" *ngIf="articles">
+  <div class="cards">
     <div *ngFor="let article of articles">
-      
+      <div class="card">
+        <div>
+          <img class="card-image" [src]="article.urlToImage">
+        </div>
+        <div class="card-title">{{article.title}} - {{article.author}}</div>
+        <div class="card-description">{{article.description}}</div>
+      </div>
     </div>
+  </div>
 </div>
